@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 4a9aba6587f1a1abfd650d0063cc88202f83c86f akramjerbi91 <akram239911@gmail.com> 1643190028 -0800	commit (initial): first commit
+4a9aba6587f1a1abfd650d0063cc88202f83c86f 4a9aba6587f1a1abfd650d0063cc88202f83c86f akramjerbi91 <akram239911@gmail.com> 1643190042 -0800	Branch: renamed refs/heads/master to refs/heads/main
+4a9aba6587f1a1abfd650d0063cc88202f83c86f dd045a96ab29d241a4f993ccf2fa5e9acf82cd26 akramjerbi91 <akram239911@gmail.com> 1643190238 -0800	commit: adding the executable that gives the current directory
