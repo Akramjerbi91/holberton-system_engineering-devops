@@ -1,0 +1,2 @@
+#!/bin/bash
+print "%s\n" "$PATH" | grep -o / | wc -l
