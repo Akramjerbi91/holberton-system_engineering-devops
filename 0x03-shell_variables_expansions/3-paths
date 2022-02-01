@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s\n" "$PATH" | grep -o / | wc -l
+echo "$PATH" | grep -o / | wc -l
