@@ -3,7 +3,7 @@
 
 minutes=1
 hours=0
-echo "HOUR: $hours"
+echo "Hour: $hours"
 
 	while((minutes<=60 && hours<12))
 		do
@@ -13,6 +13,6 @@ echo "HOUR: $hours"
 		then
 			minutes=1
 			((hours ++))
-			echo "HOUR: $hours"
+			echo "Hour: $hours"
 		fi
 		done
