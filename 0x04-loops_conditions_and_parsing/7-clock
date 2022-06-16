@@ -5,7 +5,7 @@ minutes=1
 hours=0
 echo "Hour: $hours"
 
-	while((minutes<=59 && hours<12))
+	while((minutes<=59 && hours<13))
 		do
 		echo "$minutes"
 		((minutes ++))
