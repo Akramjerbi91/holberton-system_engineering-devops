@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-
+#scricrpt that prints all fils in formated way
 
 for f in * 
 do
-	echo "$f" | cut --d=- -f2;
+	echo "$f" | cut -d='-' -f2;
 done
