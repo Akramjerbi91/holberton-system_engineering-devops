@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Connect to 4257-web-01 server with ssh private key
+ssh -i ~/.ssh/school ubuntu@54.144.49.141
