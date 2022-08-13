@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#configure ssh private school and no password
+Host  54.144.49.141
+	HostName 54.144.49.141
+    User ubuntu 
+	PasswordAuthentication no
+    IdentityFile ~/.ssh/school
+
