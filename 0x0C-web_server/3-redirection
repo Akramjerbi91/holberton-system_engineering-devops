@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 #redirection must be a “301 Moved Permanently”
-./1-install_nginx_web_server
-redirection=""
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default 
+sudo apt-get update -y
+sudo apt-get install nginx -y
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=KfGr49Z7OaA&ab_channel=LaithAcademy permanent;' /etc/nginx/sites-available/default 
+sudo service nginx start
