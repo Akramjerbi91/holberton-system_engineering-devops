@@ -5,6 +5,6 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 echo 'Hello World' | sudo tee /var/www/html/index.nginx-debian.html
 sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.dictionary.com/browse/redirect permanent;' /etc/nginx/sites-available/default
-sudo sed -i "/listen 80 default_server;/a add_header X-Served-By $hostname;" /etc/nginx/sites-available/default
+sudo sed -i "/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx start
 
