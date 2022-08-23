@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
-# installs and configures Ha Proxy
-sudo apt-get update -y
-sudo apt-get install --no-install-recommends software-properties-common -y
-sudo add-apt-repository ppa:vbernat/haproxy-2.0 -y
-
-sudo apt-get update -y
-sudo apt-get install haproxy=2.0.\* -y
-
-sudo sed -i "$ a frontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n" /etc/haproxy/haproxy.cfg
-sudo sed -i "$ a backend web-backend\n\tbalance roundrobin\n\tserver 4257-web-01 54.144.49.141:80 check\n\tserver 4257-web-02 54.242.182.44:80 check\n" /etc/haproxy/haproxy.cfg
-
-sudo service haproxy restart
+# Install and configure load balancer
+sudo apt-get -y install haproxy
+var=\
+"
+frontend http_web
+        bind *:80
+        stats uri /haproxy?stats
+        default_backend proxy_backend
+backend proxy_backend
+        balance roundrobin
+        server 4257-web-01 54.144.49.141:80 check
+        server 4257-web-02 54.242.182.44:80 check
+"
+ echo "$var" | sudo tee /etc/haproxy/haproxy.cfg
+ echo "ENABLED=1" | sudo tee /etc/default/haproxy
+ sudo service haproxy stop
+ sudo service haproxy start
