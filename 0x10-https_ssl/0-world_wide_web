@@ -1,0 +1,18 @@
+
+#!/usr/bin/env bash
+#Output: The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
+func () {
+	dig "$2.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", SUBDOMAIN, $4, $5}' SUBDOMAIN="$i"
+}
+
+declare -a arr=("www" "lb-01" "web-01" "web-02")
+
+for i in "${arr[@]}"
+do
+	if [ "$2" == "$i" ] || [ -z "$2" ]
+
+	then
+		func "$1" "$i"
+	fi
+done
+
