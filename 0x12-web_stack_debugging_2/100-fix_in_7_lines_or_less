@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# 7 lines or less
+#7 lines or less to debug the server
 pkill apache2
 sudo sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
 chmod 0644 /etc/nginx/nginx.conf
 chown nginx:nginx /etc/nginx/nginx.conf
 sudo su nginx -s /bin/bash -c 'service nginx start'
-
