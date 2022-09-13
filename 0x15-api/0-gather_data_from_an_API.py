@@ -9,29 +9,23 @@ if __name__ == "__main__":
     except Exception as e:
         exit(1)
 
-
     baseurl = "https://jsonplaceholder.typicode.com/"
     endpoint = "users/{}".format(id)
-
 
     def main_request(baseurl, endpoint):
         """request function"""
         r = requests.get(baseurl + endpoint)
         return r.json()
 
-
     user_info = main_request(baseurl, endpoint)
     user_todos = main_request(baseurl, endpoint+'/todos')
-
     name = user_info['name']
 
     done_title = []
 
-
     for user_todo in user_todos:
         if(user_todo['completed'] is True):
             done_title.append(user_todo['title'])
-
     number_of_todos = len(user_todos)
     done_number = len(done_title)
 
