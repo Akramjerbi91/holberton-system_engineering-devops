@@ -29,7 +29,6 @@ if __name__ == "__main__":
     number_of_todos = len(user_todos)
     done_number = len(done_title)
 
-    print(done_number)
     print("Employee {} is done with tasks({}/{}):".format(
         name, done_number, number_of_todos))
 
