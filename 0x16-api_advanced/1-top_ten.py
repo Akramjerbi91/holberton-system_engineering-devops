@@ -11,8 +11,9 @@ def top_ten(subreddit):
                             headers={"User-Agent": "zamacode-zama"},
                             params={"limit": "10"},
                             allow_redirects=False)
+
     if response.status_code != 200:
-        print(None)
+        print('None')
 
     for item in response.json().get("data").get("children"):
         print(item.get("data").get("title"))
