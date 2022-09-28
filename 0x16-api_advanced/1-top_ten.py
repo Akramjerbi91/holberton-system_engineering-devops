@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Subreddit api top ten'''
 
+
 def top_ten(subreddit):
     '''Subreddit to ten info'''
     import requests
@@ -12,6 +13,6 @@ def top_ten(subreddit):
                             allow_redirects=False)
     if response.status_code != 200:
         return 0
-    
+
     for item in response.json().get("data").get("children"):
         print(item.get("data").get("title"))
