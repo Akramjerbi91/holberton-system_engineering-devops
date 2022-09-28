@@ -12,7 +12,7 @@ def recurse(subreddit, hot_list=[], after=""):
                             params={"after": after},
                             allow_redirects=False)
     if response.status_code != 200:
-        return 0
+        return None
 
     for item in response.json().get("data").get("children"):
         hot_list.append(item.get("data").get("title"))
